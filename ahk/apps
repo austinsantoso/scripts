@@ -1,0 +1,46 @@
+#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
+; #Warn  ; Enable warnings to assist with detecting common errors.
+SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
+SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
+
+#SingleInstance Force
+
+username := "INSERT_USERNAME_HERE"
+
+
+; msgbox text
+; ctrl + alt + p
+^!p:: 
+MsgBox % "C:\Users\" . username . "\Data" 
+return
+
+
+; Open windows terminal
+; ctrl + alt + t 
+^!t:: 
+Run, wt 
+return
+
+; Open User Data folder
+; ctrl+shift+d
+^+d::
+Run % "C:\Users\" . username . "\Data" 
+return
+
+; Open WSL folders
+; ctrl+alt+e
+; ^!e::
+; Run "\\wsl$\" 
+; return
+
+; open Chrome
+; ctrl + alt + c
+^!c::
+Run "chrome"
+return
+
+; open Chrome Incognito
+; ctrl + alt +shift + c
+^!+c::
+Run "chrome" -incognito
+return
